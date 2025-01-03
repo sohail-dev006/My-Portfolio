@@ -1,14 +1,21 @@
 <template>
-  <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    >
+  <q-page class="" style="height: 1500px;">
+    <AboutSection/>
+    <!-- <AboutPage/> -->
+    <ProjectPage/>
+    <ContactUsForm/>
   </q-page>
 </template>
 
 <script setup>
+// import AboutPage from './AboutPage.vue';
+import AboutSection from 'src/components/AboutSection.vue';
+import AboutPage from './AboutPage.vue';
+import ProjectPage from './ProjectPage.vue';
+import ContactUsForm from 'src/components/ContactUsForm.vue';
+
+
+
 defineOptions({
   name: 'IndexPage'
 });

@@ -1,1 +1,43 @@
 // app global css in SCSS form
+:root {
+  --token-f0989dd8-6b42-4981-882e-6f9fe7f602ce: rgb(39, 38, 37);
+  --token-c3dd294d-4924-4bd7-80f1-2cfdc6e0e574: rgb(18, 18, 18);
+  --token-a378a457-09c9-4e21-8971-31a4dc6ae8ea: rgb(247, 247, 247);
+  --token-77abf34c-bfd0-46e4-bdc5-396472ca5ca6: rgba(219, 219, 219, .6);
+  --token-74f72f09-83b9-4634-a62a-6bd8de4ab27c: rgb(29, 28, 27);
+  --token-d78b5648-2f6d-40d3-b003-63d3ee4ec029: rgb(166, 145, 83);
+  --token-762a227d-c75a-4e1e-b9fd-85e17e3927e6: rgb(35, 34, 36);
+  --token-c3dca33f-647b-487b-8372-b41bbc7db055: rgb(51, 46, 54);
+  --token-4ab49e58-a945-4490-8b5c-02ec027b9db5: rgb(152, 125, 165);
+  --token-9462932a-5a8b-4c11-9082-7a0be950b8a1: rgb(31, 33, 30);
+  --token-9016b06c-fe1b-4910-a61c-9f0b15d19abd: rgb(48, 56, 42);
+  --token-1a687ac0-8ae4-46c2-83ac-d244f76f7320: rgb(111, 153, 84);
+  --token-779bf994-c88b-4734-bbca-93a3630b98c8: rgb(38, 40, 41);
+  --token-417e1bc0-fae7-40c5-839b-616fc8857e6c: rgb(51, 54, 56);
+  --token-09eaa171-06cf-4a4c-8c56-a4f55b7348dc: rgb(148, 161, 170);
+  --token-ed20d5c9-9059-4f0d-b986-536fc58ca702: rgb(46, 40, 34);
+  --token-c66ce4ae-faed-46ba-8751-539a18206dcc: rgb(194, 137, 81);
+  --token-25cc02bc-c5a0-4a7e-ac99-8d218b60fd08: rgba(69, 69, 69, .6);
+  --token-f79864ef-1a1c-4d53-9ead-bb7188aab670: rgb(10, 10, 10);
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+body{
+  background-color: var(--token-f0989dd8-6b42-4981-882e-6f9fe7f602ce);
+}
+.q-focus-helper{
+  display: none;
+}
+.border-radius-12{
+  border-radius: 12px;
+}
+.q-tab__indicator
+{
+  background-color: transparent;
+}
+.card{
+  transition: transform .3s ease;
+}

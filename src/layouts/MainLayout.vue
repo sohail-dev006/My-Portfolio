@@ -1,43 +1,58 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
-
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
-      </q-toolbar>
+    <q-header class="" style="background-color: black;" elevated>
+      <div class="row justify-center" :class="$q.screen.gt.sm ? 'q-px-xl q-py-md ' : 'q-pa-sm'">
+        <div class="col-md-11 col-12">
+          <div class="row">
+            <div class="col-12">
+              <div class="row justify-between items-center" :class="$q.screen.gt.sm ? 'q-pa-xs' : 'q-pa-sm'">
+                <div class="col-md-2">
+                  <div class="">
+                    <q-img width="50px" class="bg-transparent" height="40px" src="src/assets/Logo.png" />
+                  </div>
+                </div>
+                <div v-if="$q.screen.gt.sm" class="col-md-8">
+                  <NavTabs :tabs="tabs"/>
+                </div>
+                <div v-if="$q.screen.gt.sm" class="col-md-2">
+                  <div class="text-right">
+                    <q-btn class="bg-accent q-px-md text-capitalize text-white border-radius-24" dense flat label="Contact" />
+                  </div>
+                </div>
+                <div v-else class="text-right">
+                  <q-btn @click="icon1 != icon1" dense flat class="text-white">
+                    <q-icon v-if="icon1" name="menu" />
+                    <q-icon v-else name="close" />
+                    <q-menu class="bg-black text-white" style="border-radius: 14px;"
+                    :offset="[0, 6]"
+                    >
+                    <q-list style="min-width: 300px">
+                      <q-item clickable v-close-popup>
+                        <div class="q-pa-sm">
+                          <li class="q-py-sm">
+                            <a href="">home</a>
+                          </li>
+                          <li class="q-py-sm">
+                            <a href="/about">About</a>
+                          </li>
+                          <li class="q-py-sm">
+                            <a href="">Works</a>
+                          </li>
+                          <li class="q-py-sm">
+                            <a href="">Works</a>
+                          </li>
+                        </div>
+                      </q-item>
+                    </q-list>
+                   </q-menu>
+                  </q-btn>
+                </div>
+               </div>
+            </div>
+          </div>
+        </div>
+        </div>
     </q-header>
-
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
-      <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
-
-        <EssentialLink
-          v-for="link in linksList"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
 
     <q-page-container>
       <router-view />
@@ -47,60 +62,30 @@
 
 <script setup>
 import { ref } from 'vue'
-import EssentialLink from 'components/EssentialLink.vue'
+import NavTabs from 'src/components/NavTabs.vue';
 
+const icon1 = ref(true);
+
+let tabs = ref([
+  {
+    title: 'Home',
+    href: '/'
+  },
+  {
+    title: 'About',
+    href: '/about'
+  },
+  {
+    title: 'Project',
+    href: '/project'
+  },
+  {
+    title: 'FAQ'
+  },
+])
 defineOptions({
   name: 'MainLayout'
 })
 
-const linksList = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-]
 
-const leftDrawerOpen = ref(false)
-
-function toggleLeftDrawer () {
-  leftDrawerOpen.value = !leftDrawerOpen.value
-}
 </script>
