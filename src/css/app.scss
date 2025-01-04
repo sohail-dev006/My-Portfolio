@@ -1,4 +1,10 @@
 // app global css in SCSS form
+
+@import url('https://fonts.cdnfonts.com/css/Poppins');
+body{
+  font-family: "Poppins", sans-serif ;
+  font-optical-sizing: auto;
+}
 :root {
   --token-f0989dd8-6b42-4981-882e-6f9fe7f602ce: rgb(39, 38, 37);
   --token-c3dd294d-4924-4bd7-80f1-2cfdc6e0e574: rgb(18, 18, 18);
@@ -24,6 +30,9 @@
   margin: 0;
   box-sizing: border-box;
   padding: 0;
+}
+.text-decore{
+  text-decoration: none;
 }
 body{
   background-color: var(--token-f0989dd8-6b42-4981-882e-6f9fe7f602ce);

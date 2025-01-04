@@ -16,30 +16,33 @@
                 </div>
                 <div v-if="$q.screen.gt.sm" class="col-md-2">
                   <div class="text-right">
-                    <q-btn class="bg-accent q-px-md text-capitalize text-white border-radius-24" dense flat label="Contact" />
+                    <q-btn class="bg-accent q-px-md text-capitalize text-white border-radius-24" dense flat label="Hire Me" />
                   </div>
                 </div>
                 <div v-else class="text-right">
                   <q-btn @click="icon1 != icon1" dense flat class="text-white">
-                    <q-icon v-if="icon1" name="menu" />
-                    <q-icon v-else name="close" />
+                    <q-icon v-if="icon1" name="close" />
+                    <q-icon v-else name="menu" />
                     <q-menu class="bg-black text-white" style="border-radius: 14px;"
-                    :offset="[0, 6]"
+                    :offset="[5, 6]"
                     >
                     <q-list style="min-width: 300px">
                       <q-item clickable v-close-popup>
                         <div class="q-pa-sm">
-                          <li class="q-py-sm">
-                            <a href="">home</a>
+                          <li class="q-py-sm" style="list-style: none;">
+                            <a href="" class="text-decore text-white text-h6">Home</a>
                           </li>
-                          <li class="q-py-sm">
-                            <a href="/about">About</a>
+                          <li class="q-py-sm" style="list-style: none;">
+                            <a href="/about" class="text-decore text-white text-h6">About</a>
                           </li>
-                          <li class="q-py-sm">
-                            <a href="">Works</a>
+                          <li class="q-py-sm" style="list-style: none;">
+                            <a href="" class="text-decore text-white text-h6">Project</a>
                           </li>
-                          <li class="q-py-sm">
-                            <a href="">Works</a>
+                          <li class="q-py-sm" style="list-style: none;">
+                            <a href="" class="text-decore text-white text-h6">Contact</a>
+                          </li>
+                          <li class="q-py-sm" style="list-style: none;">
+                            <q-btn class="bg-accent q-px-md text-capitalize text-white border-radius-24" dense flat label="Hire Me" />
                           </li>
                         </div>
                       </q-item>
@@ -64,7 +67,7 @@
 import { ref } from 'vue'
 import NavTabs from 'src/components/NavTabs.vue';
 
-const icon1 = ref(true);
+const icon1 = ref(false);
 
 let tabs = ref([
   {
@@ -80,7 +83,7 @@ let tabs = ref([
     href: '/project'
   },
   {
-    title: 'FAQ'
+    title: 'Contact'
   },
 ])
 defineOptions({

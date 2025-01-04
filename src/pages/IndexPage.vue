@@ -4,6 +4,7 @@
     <!-- <AboutPage/> -->
     <ProjectPage/>
     <ContactUsForm/>
+    <FooterSection/>
   </q-page>
 </template>
 
@@ -13,6 +14,7 @@ import AboutSection from 'src/components/AboutSection.vue';
 import AboutPage from './AboutPage.vue';
 import ProjectPage from './ProjectPage.vue';
 import ContactUsForm from 'src/components/ContactUsForm.vue';
+import FooterSection from 'src/components/FooterSection.vue';
 
 
 

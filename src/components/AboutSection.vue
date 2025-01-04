@@ -5,25 +5,25 @@
         <div class="col-md-4 col-12">
           <div class="bg-black border-radius-12 text-center">
             <div class="q-pt-lg">
-              <q-avatar class="text-center bg-white q-pt-md " size="196px">
-                <!-- <img src="src/assets/f7228cab16fd92b349118b06e935964b.jpg" /> -->
+              <q-avatar class="text-center bg-white" size="196px">
+                <img src="src/assets/My_profile_672x694.jpeg" />
               </q-avatar>
             </div>
             <div class="text-white">
-              <h6 class="q-my-none text-h3" :class="$q.screen.gt.sm ? 'q-py-md' : ''">Name</h6>
+              <h4 class="q-my-none q-pt-sm text-weight-medium" :class="$q.screen.gt.sm ? 'q-pb-sm' : ''">Sohail Ahmed</h4>
               <p class="text-h6 q-mb-none" :class="$q.screen.lt.md ? 'q-px-xs': ($q.screen.gt.md ? 'q-px-xl' : 'q-px-lg')">I am a Frontend Developer based in Swat, Pakistan</p>
             </div>
             <q-item class="text-white row q-pb-md justify-center" :class="$q.screen.gt.md ? 'q-mx-auto' :''">
               <q-btn href="https://github.com/sohail-dev006" flat dense class=" text-h4" :class="$q.screen.gt.md ? 'q-px-md' :''">
                 <i class="fa-brands fa-github"></i>
               </q-btn>
-              <q-btn flat dense class=" text-h4" :class="$q.screen.gt.md ? 'q-px-md' :''">
+              <q-btn href="https://www.linkedin.com/in/sohail-dev006/" flat dense class=" text-h4" :class="$q.screen.gt.md ? 'q-px-md' :''">
                 <i class="fa-brands fa-linkedin"></i>
               </q-btn>
-              <q-btn flat dense class=" text-h4" :class="$q.screen.gt.md ? 'q-px-md' :''">
+              <q-btn href="https://www.instagram.com/zangi__006?igsh=dm9xNnNxZnQ5cHMz" flat dense class=" text-h4" :class="$q.screen.gt.md ? 'q-px-md' :''">
                 <i class="fa-brands fa-square-instagram"></i>
               </q-btn>
-              <q-btn flat dense class=" text-h4" :class="$q.screen.gt.md ? 'q-px-md' :''">
+              <q-btn href="https://www.facebook.com/Sohail.ZanGi" flat dense class=" text-h4" :class="$q.screen.gt.md ? 'q-px-md' :''">
                 <i class="fa-brands fa-facebook"></i>
               </q-btn>
             </q-item>
@@ -33,7 +33,7 @@
           <div class="bg-black border-radius-12">
             <div class="text-white q-px-md q-py-sm">
               <h4 class="q-my-md q-pl-sm text-bold">Hello There!</h4>
-              <p class="text-h5 q-pl-sm ">I'm Salman Shahid, a passionate Frontend Software Developer 🚀 with a focus on building web-development using JavaScript, React.js, and other exciting libraries and frameworks.</p>
+              <p class="text-h5 q-pl-sm ">I'm Sohail Ahmed, a passionate Frontend Software Developer 🚀 with a focus on building web and mobile applications using HTML, CSS, Bootstrap, JavaScript, Quasar Framework, Vue.js, and other exciting libraries and frameworks.</p>
               <div class="q-pl-sm ">
                 <li class="">Ready to Take on New Challenges</li>
               </div>
@@ -44,7 +44,7 @@
           </div>
           <div class="bg-black border-radius-12 q-mt-md">
             <div class="text-white q-pt-sm">
-              <div class="q-pl-md q-ml-xs" :class="$q.screen.gt.sm ? 'q-py-md text-h4': 'q-py-sm text-h5'">What I Do</div>
+              <div class="q-pl-md q-ml-xs text-weight-medium" :class="$q.screen.gt.sm ? 'q-py-md text-h4': 'q-py-sm text-h5'">What I Do</div>
               <div class="scroll-container q-pb-md">
                <div class="scroll">
                  <div class="scroll-content" v-for="(item, index) in items" :key="index">
@@ -58,40 +58,14 @@
           </div>
         </div>
       </div>
-      <div class="row q-mt-md">
-        <div class="col-12">
-          <div class="bg-black border-radius-12 text-white">
-            <div :class="$q.screen.gt.sm ? 'q-pa-lg':'q-pa-md'">
-              <h4 class="q-mb-xs" :class="$q.screen.gt.xs ? '' : 'text-h6'">Education</h4>
-              <div class="row items-center q-pt-sm">
-                <div class="q-pr-md">
-                  <q-icon class="text-h3" name="school" />
-                </div>
-                <div class="">
-                  <p class="q-my-none">2022 - 2024</p>
-                  <h5 class="q-my-none">Higher Secondary Education</h5>
-                  <p class="q-my-none">Ncr-Cet College</p>
-                </div>
-              </div>
-              <div class="row items-center q-pt-md">
-                <div class="q-pr-md">
-                  <q-icon class="text-h3" name="school" />
-                </div>
-                <div class="">
-                  <p class="q-my-none">2022 - 2024</p>
-                  <h5 class="q-my-none">Higher Secondary Education</h5>
-                  <p class="q-my-none">Ncr-Cet College</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <EducationSection/>
     </div>
   </div>
 </template>
 
 <script setup>
+import EducationSection from './EducationSection.vue';
+
 const items = [
   {
     icon: 'src/assets/html.png',
